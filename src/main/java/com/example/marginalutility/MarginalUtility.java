@@ -66,7 +66,7 @@ public class MarginalUtility {
         double maxCTU = 0;
         //            Let o_t and o_m be the optimal combination
         int o_t = 0;
-        int o_m = 0; //because  0 means no purcahse at all initially for balance = $0
+        int o_m = 0; //because  0 means no purchase at all initially for balance = $0
         for(int n_t = 0; n_t<= maxT; n_t++ ) //variable name can't be special character like (), underscore _ allowed
         {
             double  Texpense = n_t * Tunit;
@@ -77,6 +77,11 @@ public class MarginalUtility {
                 maxCTU = CTU;
                 o_t = n_t;
                 o_m = n_m;
+            }
+            //sometimes we might have two optimal combinations
+            else if(CTU == maxCTU )
+            {
+                System.out.println("The best combination of spending for maximum combined total utility  is " + n_t + " tees and " + n_m + " movies  ");
             }
 //            which is the best combination then
 
