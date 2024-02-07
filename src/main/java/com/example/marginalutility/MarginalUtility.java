@@ -1,9 +1,12 @@
 package com.example.marginalutility;
 import java.util.*;
 
+
 public class MarginalUtility {
     public static void main(String[] args)
     {
+//        MarginalUtility MU = new MarginalUtility();, no methods and class to access inside main static so didnt find it necessary to instantiate this class
+//        created this because to access the non private methods, members or class(Combination) inside it
 //        Scanner scanf = new Scanner(System.in);
 //        System.out.println("Enter STOP to stop the entries");
 //        double [] Tees = new double[20];
@@ -62,61 +65,30 @@ public class MarginalUtility {
 //        Since I didnt see Math.floorDiv(with double arguments)
         double div1 = balance/Tunit;
         int maxT = (int) Math.floor(div1);
-//        maxCTU = maximum CTU, where CTU = combined TU, where TU is total utilties of both respective quantities
-        double maxCTU = 0;
-        //            Let o_t and o_m be the optimal combination
-        int o_t = 0;
-        int o_m = 0; //because  0 means no purchase at all initially for balance = $0
-//              to find size of combination array, we need size. For this .  we have maxT, lets find maxN
         double  div2 = balance/Munit;
         int maxM = (int) Math.floor(div2);
-
+//Creating ArrayList Object
+         ArrayList<Combination> AL = new ArrayList<>();
         for(int n_t = 0; n_t<= maxT; n_t++ ) //variable name can't be special character like (), underscore _ allowed
         {
             double  Texpense = n_t * Tunit;
             int n_m = (int) Math.floor((balance - Texpense)/Munit);
-//            Storing combination after calculating n_m;
+//            //Lets assume for now , user is going to fill  up all total utilitis, so Array wont be out of bound
+            double ctu = Tees[n_t] + Movies[n_m];
+//            adding combination and total utility sum(ctu)  to ArrayList, then later finding max ct from list
 
-            double CTU = Tees[n_t] + Movies[n_m];
-            if(CTU>maxCTU)
-            {
-                maxCTU = CTU;
-                o_t = n_t;
-                o_m = n_m;
-            }
-
+//          this object is created inside object of non static parent  class"MarginalUtility"
+            AL.add(new Combination(n_t, n_m, ctu));
         }
+//        Now accessing the combination through ArrayList methods(this is why I preffered Array over Arraylist)
         System.out.println("The maximum  total utility that can be gained by purchased by buying set of Tees and movies is:  " + maxCTU);
 //    best combination of Tees and Movies
 
 
     }
-    public class Combination {
-        private int T;
-        private int M;
 
-        public Combination(int T, int M) {
-            this.T = T;
-            this.M = M;
-        }
 
-        //I am not gonna change the 'T' and 'M' in the near future, so no need of Set(.....);
-        public int getT() {
-            return T;
-        }
-
-        public int getM() {
-            return M;
-        }
-
-        /*Deep cloning of complex object is resource intensive(time and memory). THough it is not complex
-        what we are doing, we still dont use it for minimalism.. See  objects are not going to be modified later
-        intentionally , and top of that we have set instance variables(T and M) as private so we need set(..args) methods
-         */
     }
-
-
-
 
     }
 
@@ -124,4 +96,4 @@ public class MarginalUtility {
 
 
 
-}
+
