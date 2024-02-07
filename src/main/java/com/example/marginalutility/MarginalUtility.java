@@ -84,7 +84,7 @@ public class MarginalUtility {
 //      now we have all the combination and sum, lets find the max
        for(Combination i : Al) {
 //           lets print all the combiantions
-           System.out.println("The combination is: " + i.getT() + " Tshirts "  + " and " + i.getM() + " Movies "   " with ");
+           System.out.println("The combination is: " + i.getT() + " Tshirts "  + " and " + i.getM() + " Movies " + " with  combined total utility( ctu) " + i.getCTU());
 
 // The reason I didnt put "Tshirts" and  " and " together is because, name of the quantity can be different too. I will store it as variable based on the user input of name of items or choices.
 }
