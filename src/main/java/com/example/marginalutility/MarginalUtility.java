@@ -81,9 +81,13 @@ public class MarginalUtility {
             AL.add(new Combination(n_t, n_m, ctu));
         }
 //        Now accessing the combination through ArrayList methods(this is why I preffered Array over Arraylist)
-        System.out.println("The maximum  total utility that can be gained by purchased by buying set of Tees and movies is:  " + maxCTU);
-//    best combination of Tees and Movies
+//      now we have all the combination and sum, lets find the max
+       for(Combination i : Al) {
+//           lets print all the combiantions
+           System.out.println("The combination is: " + i.getT() + " Tshirts "  + " and " + i.getM() + " Movies "   " with ");
 
+// The reason I didnt put "Tshirts" and  " and " together is because, name of the quantity can be different too. I will store it as variable based on the user input of name of items or choices.
+}
 
     }
 

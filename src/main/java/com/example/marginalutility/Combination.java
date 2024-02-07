@@ -20,6 +20,10 @@ public class Combination {
         public int getM() {
             return M;
         }
+        public double getCTU()
+    {
+    return CTU;
+    }
 
         /*Deep cloning of complex object is resource intensive(time and memory). THough what we are doing is not complex
      , we still dont use it to enhance minimalism.. See ,objects are not going to be modified later
