@@ -82,7 +82,7 @@ public class MarginalUtility {
         }
 //        Now accessing the combination through ArrayList methods(this is why I preffered Array over Arraylist)
 //      now we have all the combination and sum, lets find the max
-       for(Combination i : Al) {
+       for(Combination i : AL) {
 //           lets print all the combiantions
            System.out.println("The combination is: " + i.getT() + " Tshirts "  + " and " + i.getM() + " Movies " + " with  combined total utility( ctu) " + i.getCTU());
 
@@ -94,7 +94,7 @@ public class MarginalUtility {
 
     }
 
-    }
+
 
 
 
