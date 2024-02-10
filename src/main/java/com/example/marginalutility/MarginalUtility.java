@@ -87,7 +87,18 @@ public class MarginalUtility {
            System.out.println("The combination is: " + i.getT() + " Tshirts "  + " and " + i.getM() + " Movies " + " with  combined total utility( ctu) " + i.getCTU());
 
 // The reason I didnt put "Tshirts" and  " and " together is because, name of the quantity can be different too. I will store it as variable based on the user input of name of items or choices.
-}
+//lets find the maximum value:
+           double max = 0;
+           for(Combination j : AL)
+           {
+             double val = j.getCTU();
+              if(val>max)
+               {
+                   max = val;
+               }
+           }
+           System.out.println("the maximum is " + max);
+       }
 
     }
 
