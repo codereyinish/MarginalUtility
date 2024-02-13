@@ -84,10 +84,10 @@ public class MarginalUtility {
 //      now we have all the combination and sum, lets find the max
        for(Combination i : AL) {
 //           lets print all the combiantions
-           System.out.println("The combination is: " + i.getT() + " Tshirts "  + " and " + i.getM() + " Movies " + " with  combined total utility( ctu) " + i.getCTU());
-
-// The reason I didnt put "Tshirts" and  " and " together is because, name of the quantity can be different too. I will store it as variable based on the user input of name of items or choices.
-//lets find the maximum value:
+           System.out.println("The combination is: " + i.getT() + " Tshirts " + " and " + i.getM() + " Movies " + " with  combined total utility( ctu) " + i.getCTU());
+       }
+// The reason I didn't put "Tshirts" and  " and " together is because, name of the quantity can be different too. I will store it as variable based on the user input of name of items or choices.
+//let's find the maximum ctu:
            double max = 0;
            for(Combination j : AL)
            {
@@ -98,14 +98,19 @@ public class MarginalUtility {
                }
            }
            System.out.println("the maximum is " + max);
-       }
 
     }
 
 
     }
 
-
+/*I dont want to enter the value again and again in every run , since the value I am entering is always same, why not
+write the values somewhere and store them in a file maybe and let the program get the datas from that file.
+The case is same in GUI too, i dont want user to reenter the value again, say they entered the value and computed and system
+gives the answer and it deletes all the datas then user say wanted to check whether the value he/she stored maybe incorrect,
+now all datas are erased then it will  be tedius to reenter the value, so why not have a retrieve button, that basically retireves
+the previous entries from  a storage(that can be simple file (clipboard) or advanced database ) ,
+ */
 
 
 
