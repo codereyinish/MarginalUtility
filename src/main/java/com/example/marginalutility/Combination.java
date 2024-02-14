@@ -1,6 +1,8 @@
 package com.example.marginalutility;
 
-public class Combination {
+import java.io.Serializable;
+
+public class Combination implements Serializable {
         private int T;
         private int M;
         private double CTU;
