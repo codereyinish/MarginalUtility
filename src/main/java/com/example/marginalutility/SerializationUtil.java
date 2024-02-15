@@ -7,17 +7,25 @@ import java.util.ArrayList;
 public class SerializationUtil {
 //methods for serialization and deserialization, static so we dont have to instantiate class to access methods
         public static void serialize(Object obj, String fileName) throws IOException, ClassNotFoundException
-        {try {
+        {try
         FileOutputStream fileOut = new FileOutputStream("fileName");
         ObjectOutputStream out = new ObjectOutputStream(fileOut);
         out.write(obj);
-        out.close();
-        fileOut.close();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        finally
+    {
+        if(out!= null)
+        {
+            out.close();
+        }
+        if(fileOut!=null)
+        {
+        fileOut.close();
+    }
         }
 /*      no return type, object into serialized byte by .write() of out object, serialized object passed into file through
 fileOut stream
@@ -42,3 +50,6 @@ fileOut stream
 
 
 }
+
+
+//control + - -----> zoom in zoom out, whereas cmd + - , hide code block
